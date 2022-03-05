@@ -1,4 +1,4 @@
-// Copyright @ 2018-2021 xiejiahe. All rights reserved. MIT license.
+// Copyright @ 2018-2022 xiejiahe. All rights reserved. MIT license.
 // See https://github.com/xjh22222228/nav
 
 import { Component } from '@angular/core'
@@ -71,7 +71,22 @@ export default class SideComponent {
         id,
       }
     })
-    window.scrollTo(0, 0)
+    this.handlePositionTop()
+  }
+
+  handlePositionTop() {
+    setTimeout(() => {
+      const el = document.querySelector('.search-header') as HTMLDivElement
+      console.log(el)
+      if (el) {
+        const h = el.offsetHeight;
+        window.scroll({
+          top: h,
+          left: 0,
+          behavior: 'smooth'
+        })
+      }
+    }, 10)
   }
 
   onCollapse = (item, index) => {
@@ -83,6 +98,7 @@ export default class SideComponent {
   onCollapseAll = (e: Event) => {
     e?.stopPropagation()
     toggleCollapseAll(this.websiteList)
+    this.handlePositionTop()
   }
 
   collapsed() {

@@ -1,4 +1,4 @@
-// Copyright @ 2018-2021 xiejiahe. All rights reserved. MIT license.
+// Copyright @ 2018-2022 xiejiahe. All rights reserved. MIT license.
 // See https://github.com/xjh22222228/nav
 
 import { Component, OnInit, Input, ViewChildren, QueryList } from '@angular/core'
@@ -10,6 +10,7 @@ import { INavProps, ITagProp, INavFourProp } from '../../types'
 import * as __tag from '../../../data/tag.json'
 import { $t } from '../../locale'
 import { MoveSiteComponent } from '../move-site/index.component'
+import { settings } from 'src/store'
 
 const tagMap: ITagProp = (__tag as any).default
 
@@ -27,6 +28,7 @@ export class CardComponent implements OnInit {
 
   $t = $t
   objectKeys = Object.keys
+  settings = settings
   websiteList: INavProps[] = websiteList
   isLogin: boolean = !!getToken()
   showCreateModal = false

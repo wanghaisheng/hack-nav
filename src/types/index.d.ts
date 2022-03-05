@@ -1,4 +1,4 @@
-// Copyright @ 2018-2021 xiejiahe. All rights reserved. MIT license.
+// Copyright @ 2018-2022 xiejiahe. All rights reserved. MIT license.
 // See https://github.com/xjh22222228/nav
 
 export type ThemeType =
@@ -69,6 +69,7 @@ export interface ISearchEngineProps {
   icon: string | null
   placeholder?: string
   blocked: boolean
+  isInner: boolean
 }
 
 export interface ISettings {
@@ -99,6 +100,7 @@ export interface ISettings {
   shortcutThemeImages: Record<string, string>[]
   shortcutThemeShowWeather: boolean
 
+  showRate: boolean
   mirrorList: Record<string, string>[]
 }
 

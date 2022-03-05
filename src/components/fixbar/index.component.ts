@@ -1,4 +1,4 @@
-// Copyright @ 2018-2021 xiejiahe. All rights reserved. MIT license.
+// Copyright @ 2018-2022 xiejiahe. All rights reserved. MIT license.
 // See https://github.com/xjh22222228/nav
 
 import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core'
@@ -126,6 +126,9 @@ export class FixbarComponent {
 
   goSystemPage() {
     this.router.navigate(['system'])
+    setTimeout(() => {
+      window.location.reload()
+    }, 200)
   }
 
   handleSync() {
